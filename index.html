@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>Meu Portfólio</title>
+
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: #f4f4f4;
+    }
+
+    header {
+      background: #222;
+      color: white;
+      padding: 30px;
+      text-align: center;
+    }
+
+    nav {
+      background: #333;
+      padding: 10px;
+      text-align: center;
+    }
+
+    nav a {
+      color: white;
+      margin: 0 15px;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    section {
+      padding: 30px;
+    }
+
+    h2 {
+      color: #333;
+    }
+
+    .card {
+      background: white;
+      padding: 20px;
+      margin: 15px 0;
+      border-radius: 8px;
+      box-shadow: 0 0 5px rgba(0,0,0,0.1);
+    }
+
+    .card a {
+      margin-right: 10px;
+      color: #007BFF;
+      text-decoration: none;
+    }
+
+    ul {
+      list-style: none;
+      padding: 0;
+    }
+
+    ul li {
+      background: #ddd;
+      margin: 5px 0;
+      padding: 8px;
+      border-radius: 5px;
+    }
+
+    footer {
+      background: #222;
+      color: white;
+      text-align: center;
+      padding: 15px;
+    }
+
+    button {
+      padding: 8px 15px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      background: #007BFF;
+      color: white;
+    }
+  </style>
+</head>
+
+<body>
+
+<header>
+  <h1>Gustavo Sales</h1>
+  <p>Desenvolvedor Front-end | JavaScript</p>
+</header>
+
+<nav>
+  <a href="#sobre">Sobre</a>
+  <a href="#projetos">Projetos</a>
+  <a href="#habilidades">Habilidades</a>
+  <a href="#contato">Contato</a>
+</nav>
+
+<section id="sobre">
+  <h2>Sobre mim</h2>
+  <p>
+    Sou estudante de TI, apaixonado por tecnologia e desenvolvimento web.
+    Busco oportunidade para aplicar meus conhecimentos em JavaScript e crescer profissionalmente.
+  </p>
+</section>
+
+<section id="projetos">
+  <h2>Projetos</h2>
+
+  <div class="card">
+    <h3>Calculadora</h3>
+    <p>Calculadora feita com HTML, CSS e JavaScript.</p>
+    <a href="https://gustavosales2001.github.io/calc_JS/">Ver projeto</a>
+    <a href="https://gustavosales2001.github.io/calc_JS/">GitHub</a>
+  </div>
+
+  <div class="card">
+    <h3>Lista de tarefas</h3>
+    <p>Aplicação para organizar tarefas usando LocalStorage.</p>
+    <a href="https://gustavosales2001.github.io/calc_JS/">Ver projeto</a>
+    <a href="https://gustavosales2001.github.io/calc_JS/">GitHub</a>
+  </div>
+
+</section>
+
+<section id="habilidades">
+  <h2>Habilidades</h2>
+  <ul>
+    <li>HTML</li>
+    <li>CSS</li>
+    <li>JavaScript</li>
+    <li>Git & GitHub</li>
+  </ul>
+</section>
+
+<section id="contato">
+  <h2>Contato</h2>
+  <p>Email: gustavosalesbarros2001@gmail.com</p>
+  <p>GitHub: github.com</p>
+  <p>LinkedIn: linkedin.com</p>
+
+
+<br>
+<button onclick="whatsapp()">WhatsApp</button><br>
+<button onclick="email()">E-mail</button>
+
+<footer>
+  <p>© 2026 - Meu Portfólio</p>
+</footer>
+
+<script>
+  function whatsapp() {
+    window.open(
+      "https://wa.me/5511933128628?text=Olá!%20Vi%20seu%20portfólio.",
+      "_blank"
+    );
+  }
+
+  function email() {
+    window.location.href =
+      "mailto:gustavosalesbarros2001@gmail.com?subject=Contato%20Portfólio";
+  }
+</script>
+
+</body>
+</html>
