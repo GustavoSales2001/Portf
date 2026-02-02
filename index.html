@@ -5,11 +5,26 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Meu Portfólio</title>
 
+  <!-- Ícones -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
   <style>
     body {
       margin: 0;
       font-family: Arial, sans-serif;
-      background: #f2f2f2;
+      background-image: url("https://images.unsplash.com/photo-1518770660439-4636190af475");
+      background-size: cover;
+      background-position: center;
+      background-attachment: fixed;
+      background-repeat: no-repeat;
+    }
+
+    body::before {
+      content: "";
+      position: fixed;
+      inset: 0;
+      background: rgba(175, 175, 175, 0.9);
+      z-index: -1;
     }
 
     .container {
@@ -18,21 +33,16 @@
       padding: 16px;
     }
 
-    @media (max-width: 768px) {
-    .container {
-          padding: 8px;
-      }
-    }
-
     header {
-      background: #222;
+      background: rgba(34, 34, 34, 0.9);
       color: white;
       padding: 30px;
       text-align: center;
+      border-bottom: 3px solid #7f9bb9;
     }
 
     nav {
-      background: #333;
+      background: rgba(51, 51, 51, 0.95);
       padding: 10px;
       text-align: center;
     }
@@ -48,69 +58,63 @@
       padding: 30px;
     }
 
-    h2 {
-      color: #333;
-    }
-
     .card {
       background: white;
       padding: 20px;
       margin: 15px 0;
       border-radius: 8px;
-      box-shadow: 0 0 5px rgba(0,0,0,0.1);
+      box-shadow: 0 0 10px rgba(0,0,0,0.15);
     }
 
-    .card a {
-      margin-right: 10px;
-      color: #7f9bb9;
-      text-decoration: none;
-    }
-
-    ul {
-      list-style: none;
-      padding: 0;
-    }
-
-    ul li {
-      background: #ddd;
-      margin: 5px 0;
-      padding: 8px;
+    /* ===== HABILIDADES ===== */
+    .skills li {
+      background: #7f9bb9;
+      color: black;
+      margin: 10px 0;
+      padding: 12px;
       border-radius: 5px;
+      cursor: pointer;
+      font-weight: bold;
+      transition: 0.3s;
+    }
+
+    .skills li:hover {
+      background: #6b8db0;
+    }
+
+    .nivel {
+      display: none;
+      margin-top: 5px;
+      font-size: 14px;
+      font-weight: normal;
+    }
+
+    /* ===== CONTATO ÍCONES ===== */
+    .contatos {
+      display: flex;
+      gap: 20px;
+      justify-content: center;
+      margin-top: 20px;
+    }
+
+    .contatos i {
+      font-size: 35px;
+      color: #333;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+
+    .contatos i:hover {
+      color: #7f9bb9;
+      transform: scale(1.1);
     }
 
     footer {
-      background: #222;
+      background: rgba(34, 34, 34, 0.95);
       color: white;
       text-align: center;
       padding: 15px;
     }
-
-    button {
-      padding: 12px 12px;
-      border: nome;
-      border-radius: 5px;
-      cursor: pointer;
-      background: #7f9bb9;
-      color: black;
-    }
-
-    .container-contatos {
-  display: flex;
-  flex-direction: column; 
-  gap: 10px; 
-}
-
-.container-contatos button {
-  flex: 1; 
-  text-align: center; 
-  padding: 12px 12px; 
-}
-
-button {
-  width: 200px; 
-  padding: 12px 12px;
-}
-
   </style>
 </head>
 
@@ -137,7 +141,6 @@ button {
 </section>
 
 <div class="container">
-
   <section id="projetos">
     <h2>Projetos</h2>
 
@@ -145,79 +148,71 @@ button {
       <h3>Calculadora</h3>
       <p>Calculadora feita com HTML, CSS e JavaScript.</p>
       <a href="https://gustavosales2001.github.io/calc_JS/">Ver projeto</a>
-      <a href="https://github.com/GustavoSales2001/calc_JS/blob/main/index.html">GitHub</a>
+      <a href="https://github.com/GustavoSales2001/calc_JS">GitHub</a>
     </div>
 
-   <div class="card">
-    <h3>Lista de tarefas</h3>
-    <p>Aplicação para organizar tarefas usando LocalStorage.</p>
-    
-   </div>
-
-   <div class="container-contatos">
-   
-</div>
-
+    <div class="card">
+      <h3>Lista de tarefas</h3>
+      <p>Aplicação para organizar tarefas usando LocalStorage.</p>
+    </div>
   </section>
-
 </div>
 
 <section id="habilidades">
-  <h2>Habilidades</h2>
-  <ul>
-    <li>HTML</li>
-    <li>CSS</li>
-    <li>JavaScript</li>
-    <li>Git & GitHub</li>
+  <h2>Habilidades (clique)</h2>
+  <ul class="skills">
+    <li onclick="toggleNivel(this)">HTML
+      <div class="nivel">Nível: Intermediário</div>
+    </li>
+    <li onclick="toggleNivel(this)">CSS
+      <div class="nivel">Nível: Intermediário</div>
+    </li>
+    <li onclick="toggleNivel(this)">JavaScript
+      <div class="nivel">Nível: Intermediário</div>
+    </li>
+    <li onclick="toggleNivel(this)">Git & GitHub
+      <div class="nivel">Nível: Intermediário</div>
+    </li>
   </ul>
 </section>
 
 <section id="contato">
   <h2>Contato</h2>
 
-<br>
-<button onclick="whatsapp()">WhatsApp</button><br>
-<button onclick="email()">E-mail</button><br>
-<button onclick="linkedln()">LinkedIn</button><br>
-<button onclick="GitHub()">GitHub</button>
+  <div class="contatos">
+    <i class="fab fa-whatsapp" onclick="whatsapp()"></i>
+    <i class="fas fa-envelope" onclick="email()"></i>
+    <i class="fab fa-linkedin" onclick="linkedln()"></i>
+    <i class="fab fa-github" onclick="GitHub()"></i>
+  </div>
+</section>
 
 <footer>
   <p>© 2026 - Meu Portfólio</p>
 </footer>
 
 <script>
+  function toggleNivel(elemento) {
+    const nivel = elemento.querySelector(".nivel");
+    nivel.style.display = nivel.style.display === "block" ? "none" : "block";
+  }
+
   function whatsapp() {
-    window.open(
-      "https://wa.me/5511933128628?text=Olá!%20Vi%20seu%20portfólio.",
-      "_blank"
-    );
+    window.open("https://wa.me/5511933128628", "_blank");
   }
 
   function email() {
-    window.location.href =
-      "mailto:gustavosalesbarros2001@gmail.com?subject=Contato%20Portfólio";
+    window.location.href = "mailto:gustavosalesbarros2001@gmail.com";
   }
 
   function linkedln() {
-    window.location.href =
-      "https://www.linkedin.com/in/gustavo-sales-3310a6210?";
+    window.location.href = "https://www.linkedin.com/in/gustavo-sales-3310a6210";
   }
 
-   function GitHub() {
-    window.location.href =
-      "https://github.com/GustavoSales2001?tab=repositories";
+  function GitHub() {
+    window.location.href = "https://github.com/GustavoSales2001";
   }
-
 </script>
 
 </body>
 </html>
-
-
-
-
-
-
-
-
-
