@@ -1,279 +1,280 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Portfólio - Gustavo Sales</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Portfólio - Gustavo Sales</title>
 
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
 
-<style>
-html { scroll-behavior: smooth; }
+  <style>
+    html {
+      scroll-behavior: smooth;
+    }
 
-body {
-  margin: 0;
-  font-family: Arial, sans-serif;
-  background-image: url("https://www.remessaonline.com.br/blog/wp-content/uploads/2024/04/javascript.jpg");
-  background-size: cover;
-  background-position: center;
-  background-attachment: fixed;
-}
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background-image: url("https://www.remessaonline.com.br/blog/wp-content/uploads/2024/04/javascript.jpg");
+      background-size: cover;
+      background-position: center;
+      background-attachment: fixed;
+    }
 
-body::before {
-  content: "";
-  position: fixed;
-  inset: 0;
-  background: rgba(0,0,0,0.8); /* película fina */
-  z-index: -1;
-}
+    body::before {
+      content: "";
+      position: fixed;
+      inset: 0;
+      background: rgba(0, 0, 0, 0.8);
+      z-index: -1;
+    }
 
-header {
-  background: rgba(34,34,34,0.9);
-  color: white;
-  padding: 25px;
-  text-align: center;
-  border-bottom: 3px solid #7f9bb9;
-}
+    header {
+      background: rgba(34, 34, 34, 0.9);
+      color: white;
+      padding: 25px;
+      text-align: center;
+      border-bottom: 3px solid #7f9bb9;
+    }
 
-/* MENU */
-.menu {
-  background: rgba(51,51,51,0.95);
-  padding: 15px;
-  position: sticky;
-  top: 0;
-  z-index: 10;
-  display: flex;
-  justify-content: center;
-  gap: 15px;
-  flex-wrap: wrap;
-}
+    /* MENU */
+    .menu {
+      background: rgba(51, 51, 51, 0.95);
+      padding: 15px;
+      position: sticky;
+      top: 0;
+      z-index: 10;
+      display: flex;
+      justify-content: center;
+      gap: 15px;
+      flex-wrap: wrap;
+    }
 
-.menu a {
-  background: #9bb4cf;
-  color: #111;
-  padding: 10px 18px;
-  border-radius: 25px;
-  text-decoration: none;
-  font-weight: bold;
-  transition: 0.3s;
-}
+    .menu a {
+      background: #9bb4cf;
+      color: #111;
+      padding: 10px 18px;
+      border-radius: 25px;
+      text-decoration: none;
+      font-weight: bold;
+      transition: 0.3s;
+    }
 
-.menu a:hover {
-  background: #7f9bb9;
-  color: white;
-  transform: translateY(-2px);
-}
+    .menu a:hover {
+      background: #7f9bb9;
+      color: white;
+      transform: translateY(-2px);
+    }
 
-section {
-  padding: 40px 20px;
-}
+    section {
+      padding: 40px 20px;
+    }
 
-.card {
-  background: rgba(255,255,255,0.85);
-  padding: 15px;
-  margin: 15px auto;
-  border-radius: 10px;
-  max-width: 900px;
-  box-shadow: 0 0 8px rgba(0,0,0,0.12);
-  cursor: pointer;
-}
+    .card {
+      background: rgba(255, 255, 255, 0.85);
+      padding: 15px;
+      margin: 15px auto;
+      border-radius: 10px;
+      max-width: 900px;
+      box-shadow: 0 0 8px rgba(0, 0, 0, 0.12);
+      cursor: pointer;
+    }
 
-.card strong {
-  display: block;
-  text-align: center;
-  font-size: 18px;
-}
+    .card strong {
+      display: block;
+      text-align: center;
+      font-size: 18px;
+    }
 
-.card-content {
-  display: none;
-  margin-top: 10px;
-  text-align: center;
-}
+    .card-content {
+      display: none;
+      margin-top: 10px;
+      text-align: center;
+    }
 
-.skills {
-  list-style: none;
-  padding: 0;
-  max-width: 600px;
-  margin: auto;
-}
+    .skills {
+      list-style: none;
+      padding: 0;
+      max-width: 600px;
+      margin: auto;
+    }
 
-.skills li {
-  background: #9bb4cf;
-  margin: 10px 0;
-  padding: 10px;
-  border-radius: 6px;
-  cursor: pointer;
-  font-weight: bold;
-}
+    .skills li {
+      background: #9bb4cf;
+      margin: 10px 0;
+      padding: 10px;
+      border-radius: 6px;
+      cursor: pointer;
+      font-weight: bold;
+    }
 
-.nivel {
-  display: none;
-  font-size: 14px;
-  margin-top: 5px;
-}
+    .nivel {
+      display: none;
+      font-size: 14px;
+      margin-top: 5px;
+    }
 
-.contatos {
-  display: flex;
-  gap: 25px;
-  justify-content: center;
-  margin-top: 20px;
-}
+    .contatos {
+      display: flex;
+      gap: 25px;
+      justify-content: center;
+      margin-top: 20px;
+    }
 
-.contatos i {
-  font-size: 36px;
-  cursor: pointer;
-  transition: 0.3s;
-}
+    .contatos i {
+      font-size: 36px;
+      cursor: pointer;
+      transition: 0.3s;
+    }
 
-.contatos i:hover {
-  color: #7f9bb9;
-  transform: scale(1.1);
-}
+    .contatos i:hover {
+      color: #7f9bb9;
+      transform: scale(1.1);
+    }
 
-footer {
-  background: rgba(34,34,34,0.95);
-  color: white;
-  text-align: center;
-  padding: 15px;
-}
+    footer {
+      background: rgba(34, 34, 34, 0.95);
+      color: white;
+      text-align: center;
+      padding: 15px;
+    }
 
-h2{
-  color: white;
-}
-
-</style>
+    h2 {
+      color: white;
+    }
+  </style>
 </head>
 
 <body>
+  <header>
+    <h1>Gustavo Sales</h1>
+    <p>Desenvolvedor Front-end | JavaScript | SQL</p>
+  </header>
 
-<header>
-<h1>Gustavo Sales</h1>
-<p>Desenvolvedor Front-end | JavaScript | SQL</p>
-</header>
+  <nav class="menu">
+    <a href="#sobre" onclick="abrirCard('card-sobre')">Sobre</a>
+    <a href="#objetivo" onclick="abrirCard('card-objetivo')">Objetivo</a>
+    <a href="#formacao" onclick="abrirCard('card-formacao')">Formação</a>
+    <a href="#projetos" onclick="abrirCard('card-projeto')">Projetos</a>
+    <a href="#habilidades" onclick="abrirCard('card-habilidades')">Habilidades</a>
+    <a href="#contato" onclick="abrirCard('card-contato')">Contato</a>
+  </nav>
 
-<nav class="menu">
-  <a href="#sobre" onclick="abrirCard('card-sobre')">Sobre</a>
-  <a href="#objetivo" onclick="abrirCard('card-objetivo')">Objetivo</a>
-  <a href="#formacao" onclick="abrirCard('card-formacao')">Formação</a>
-  <a href="#projetos" onclick="abrirCard('card-projeto')">Projetos</a>
-  <a href="#habilidades" onclick="abrirCard('card-habilidades')">Habilidades</a>
-  <a href="#contato" onclick="abrirCard('card-contato')">Contato</a>
-</nav>
+  <section id="sobre">
+    <div class="card" id="card-sobre" onclick="toggleCard(this)">
+      <strong>Resumo Profissional</strong>
+      <div class="card-content">
+        Profissional em transição para a área de Tecnologia da Informação, com foco em JavaScript.
+        Possuo base sólida em lógica de programação, estruturação de código e desenvolvimento de aplicações,
+        além de conhecimentos em SQL e banco de dados.
+      </div>
+    </div>
+  </section>
 
-<section id="sobre">
-<div class="card" id="card-sobre" onclick="toggleCard(this)">
-<strong>Resumo Profissional</strong>
-<div class="card-content">
-Profissional em transição para a área de Tecnologia da Informação, com foco em JavaScript.
-Possuo base sólida em lógica de programação, estruturação de código e desenvolvimento de aplicações,
-além de conhecimentos em SQL e banco de dados.
-</div>
-</div>
-</section>
+  <section id="objetivo">
+    <div class="card" id="card-objetivo" onclick="toggleCard(this)">
+      <strong>Objetivo</strong>
+      <div class="card-content">
+        Atuar como Desenvolvedor Júnior ou em áreas correlatas à tecnologia, aplicando e aprofundando
+        meus conhecimentos em JavaScript e banco de dados.
+      </div>
+    </div>
+  </section>
 
-<section id="objetivo">
-<div class="card" id="card-objetivo" onclick="toggleCard(this)">
-<strong>Objetivo</strong>
-<div class="card-content">
-Atuar como Desenvolvedor Júnior ou em áreas correlatas à tecnologia, aplicando e aprofundando
-meus conhecimentos em JavaScript e banco de dados.
-</div>
-</div>
-</section>
+  <section id="formacao">
+    <div class="card" id="card-formacao" onclick="toggleCard(this)">
+      <strong>Formação Acadêmica</strong>
+      <div class="card-content">
+        <p>Técnico em Mecatrônica – Universidade de Mogi das Cruzes (2019–2020)</p>
+        <p>Formação em Atirador – Exército Brasileiro (2021–2022)</p>
+      </div>
+    </div>
+  </section>
 
-<section id="formacao">
-<div class="card" id="card-formacao" onclick="toggleCard(this)">
-<strong>Formação Acadêmica</strong>
-<div class="card-content">
-<p>Técnico em Mecatrônica – Universidade de Mogi das Cruzes (2019–2020)</p>
-<p>Formação em Atirador – Exército Brasileiro (2021–2022)</p>
-</div>
-</div>
-</section>
+  <section id="projetos">
+    <h2>Projetos</h2>
 
-<section id="projetos">
-<h2>Projetos</h2>
+    <div class="card" id="card-projeto" onclick="toggleCard(this)">
+      <strong>Calculadora</strong>
+      <div class="card-content">
+        Calculadora feita com HTML, CSS e JavaScript.<br /><br />
+        <a href="https://gustavosales2001.github.io/calc_JS/" target="_blank">Ver projeto</a> |
+        <a href="https://github.com/GustavoSales2001/calc_JS" target="_blank">GitHub</a>
+      </div>
+    </div>
+  </section>
 
-<div class="card" id="card-projeto" onclick="toggleCard(this)">
-<strong>Calculadora</strong>
-<div class="card-content">
-Calculadora feita com HTML, CSS e JavaScript.<br><br>
-<a href="https://gustavosales2001.github.io/calc_JS/" target="_blank">Ver projeto</a> |
-<a href="https://github.com/GustavoSales2001/calc_JS" target="_blank">GitHub</a>
-</div>
-</div>
-</section>
+  <section id="habilidades">
+    <h2>Habilidades Técnicas</h2>
 
-<section id="habilidades">
+    <ul class="skills">
+      <li onclick="toggleNivel(this)">JavaScript <div class="nivel">Intermediário</div></li>
+      <li onclick="toggleNivel(this)">HTML <div class="nivel">Intermediário</div></li>
+      <li onclick="toggleNivel(this)">CSS <div class="nivel">Intermediário</div></li>
+      <li onclick="toggleNivel(this)">SQL <div class="nivel">Básico / Intermediário</div></li>
+      <li onclick="toggleNivel(this)">Git <div class="nivel">Conceitos iniciais</div></li>
+    </ul>
 
-<h2>Habilidades Técnicas</h2>
-<ul class="skills">
-<li onclick="toggleNivel(this)">JavaScript <div class="nivel">Intermediário</div></li>
-<li onclick="toggleNivel(this)">HTML <div class="nivel">Intermediário</div></li>
-<li onclick="toggleNivel(this)">CSS <div class="nivel">Intermediário</div></li>
-<li onclick="toggleNivel(this)">SQL <div class="nivel">Básico / Intermediário</div></li>
-<li onclick="toggleNivel(this)">Git <div class="nivel">Conceitos iniciais</div></li>
-</ul>
+    <div class="card" id="card-habilidades" onclick="toggleCard(this)">
+      <strong>Habilidades Comportamentais</strong>
+      <div class="card-content">
+        Proatividade • Raciocínio lógico • Organização • Facilidade de aprendizado • Trabalho em equipe
+      </div>
+    </div>
+  </section>
 
-<div class="card" id="card-habilidades" onclick="toggleCard(this)">
-<strong>Habilidades Comportamentais</strong>
-<div class="card-content">
-Proatividade • Raciocínio lógico • Organização • Facilidade de aprendizado • Trabalho em equipe
-</div>
-</div>
+  <section id="contato">
+    <div class="card" id="card-contato" onclick="toggleCard(this)">
+      <strong>Contato</strong>
+      <div class="card-content">
+        <div class="contatos">
+          <i class="fab fa-whatsapp" onclick="whatsapp()"></i>
+          <i class="fas fa-envelope" onclick="email()"></i>
+          <i class="fab fa-linkedin" onclick="linkedln()"></i>
+          <i class="fab fa-github" onclick="GitHub()"></i>
+        </div>
+      </div>
+    </div>
+  </section>
 
-</section>
+  <footer>
+    <p>© 2026 - Gustavo Sales</p>
+  </footer>
 
-<section id="contato">
-<div class="card" id="card-contato" onclick="toggleCard(this)">
-<strong>Contato</strong>
-<div class="card-content">
-<div class="contatos">
-<i class="fab fa-whatsapp" onclick="whatsapp()"></i>
-<i class="fas fa-envelope" onclick="email()"></i>
-<i class="fab fa-linkedin" onclick="linkedln()"></i>
-<i class="fab fa-github" onclick="GitHub()"></i>
-</div>
-</div>
-</div>
-</section>
+  <script>
+    function toggleCard(card) {
+      const content = card.querySelector(".card-content");
+      content.style.display = content.style.display === "block" ? "none" : "block";
+    }
 
-<footer>
-<p>© 2026 - Gustavo Sales</p>
-</footer>
+    function abrirCard(id) {
+      setTimeout(() => {
+        const card = document.getElementById(id);
+        const content = card.querySelector(".card-content");
+        content.style.display = "block";
+      }, 300);
+    }
 
-<script>
-function toggleCard(card){
-  const content = card.querySelector(".card-content");
-  content.style.display = content.style.display === "block" ? "none" : "block";
-}
+    function toggleNivel(el) {
+      const nivel = el.querySelector(".nivel");
+      nivel.style.display = nivel.style.display === "block" ? "none" : "block";
+    }
 
-function abrirCard(id){
-  setTimeout(() => {
-    const card = document.getElementById(id);
-    const content = card.querySelector(".card-content");
-    content.style.display = "block";
-  }, 300);
-}
+    function whatsapp() {
+      window.open("https://wa.me/5511933128628", "_blank");
+    }
 
-function toggleNivel(el){
-  const nivel = el.querySelector(".nivel");
-  nivel.style.display = nivel.style.display === "block" ? "none" : "block";
-}
+    function email() {
+      window.location.href = "mailto:gustavosalesbarros2001@gmail.com";
+    }
 
-function whatsapp(){
-window.open("https://wa.me/5511933128628","_blank");
-}
-function email(){
-window.location.href="mailto:gustavosalesbarros2001@gmail.com";
-}
-function linkedln(){
-window.location.href="https://www.linkedin.com/in/gustavo-sales-3310a6210";
-}
-function GitHub(){
-window.location.href="https://github.com/GustavoSales2001";
-}
-</script>
+    function linkedln() {
+      window.location.href = "https://www.linkedin.com/in/gustavo-sales-3310a6210";
+    }
 
+    function GitHub() {
+      window.location.href = "https://github.com/GustavoSales2001";
+    }
+  </script>
 </body>
 </html>
