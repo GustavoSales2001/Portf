@@ -35,7 +35,7 @@ body::before{
   width:100%;
   display:flex;
   justify-content:space-between;
-  align-items:center;
+  align-items:flex-start;
   padding:20px 50px;
 }
 
@@ -45,20 +45,29 @@ body::before{
   font-weight:bold;
 }
 
+/* MENU ESTILIZADO */
 .menu{
   display:flex;
-  gap:30px;
+  flex-direction:column;
+  gap:15px;
 }
 
 .menu a{
+  background:rgba(0,255,204,0.15);
+  border:2px solid #00ffcc;
   color:white;
   text-decoration:none;
   font-weight:bold;
+  padding:10px 25px;
+  border-radius:30px;
+  text-align:center;
   transition:.3s;
 }
 
 .menu a:hover{
-  color:#00ffcc;
+  background:#00ffcc;
+  color:black;
+  transform:scale(1.05);
 }
 
 .container{
@@ -75,7 +84,14 @@ body::before{
   width:350px;
   text-align:center;
   box-shadow:0 0 30px rgba(0,255,200,.3);
-  animation:fadeIn 1.5s ease;
+  opacity:0;
+  transform:translateY(40px);
+  transition:1s;
+}
+
+.card.show{
+  opacity:1;
+  transform:translateY(0);
 }
 
 .card img{
@@ -150,20 +166,26 @@ footer .footer-social a:hover{
   transform:scale(1.2);
 }
 
-@keyframes fadeIn{
-  from{opacity:0; transform:translateY(40px);}
-  to{opacity:1; transform:translateY(0);}
-}
-
 @media(max-width:600px){
-  .menu{
-    flex-wrap:wrap;
-    justify-content:center;
+  .topo{
+    flex-direction:column;
+    align-items:center;
     gap:15px;
   }
+
+  .menu{
+    width:100%;
+    align-items:center;
+  }
+
+  .menu a{
+    width:80%;
+  }
+
   .container{
     padding:20px;
   }
+
   .card{
     width:90%;
   }
@@ -184,7 +206,7 @@ footer .footer-social a:hover{
 </header>
 
 <div class="container">
-  <div class="card">
+  <div class="card reveal">
 
     <img src="https://i.imgur.com/aS0H0KX.png" alt="Foto Gustavo">
 
@@ -192,9 +214,8 @@ footer .footer-social a:hover{
     <p>Desenvolvedor Front-end & UI/UX</p>
 
     <div class="social">
-      <a href="#"><i class="fab fa-instagram"></i></a>
-      <a href="#"><i class="fab fa-linkedin-in"></i></a>
-      <a href="#"><i class="fab fa-github"></i></a>
+      <a href="https://wa.me/5511933128628" target="_blank"><i class="fab fa-whatsapp"></i></a>
+      <a href="https://www.instagram.com/gustavo_____salles?igsh=MXd5bTljdDA1a2Zhaw==" target="_blank"><i class="fab fa-instagram"></i></a>
     </div>
 
   </div>
@@ -204,11 +225,22 @@ footer .footer-social a:hover{
   <p>© 2026 Gustavo Sales - Todos os direitos reservados</p>
 
   <div class="footer-social">
-    <a href="#"><i class="fab fa-linkedin"></i></a>
-    <a href="#"><i class="fab fa-github"></i></a>
-    <a href="#"><i class="fab fa-instagram"></i></a>
+    <a href="https://www.linkedin.com/in/gustavo-sales-3310a6210" target="_blank"><i class="fab fa-linkedin"></i></a>
+    <a href="https://github.com/GustavoSales2001" target="_blank"><i class="fab fa-github"></i></a>
   </div>
 </footer>
+
+<script>
+const reveals = document.querySelectorAll('.reveal');
+window.addEventListener('scroll', () => {
+  reveals.forEach(el => {
+    const top = el.getBoundingClientRect().top;
+    if(top < window.innerHeight - 100){
+      el.classList.add('show');
+    }
+  });
+});
+</script>
 
 </body>
 </html>
