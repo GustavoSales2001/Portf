@@ -1,281 +1,214 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Portfólio - Gustavo Sales</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Portfólio - Gustavo Sales</title>
 
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 
-  <style>
-    html {
-      scroll-behavior: smooth;
-    }
+<style>
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+  font-family: Arial, sans-serif;
+}
 
-    body {
-      margin: 0;
-      font-family: Arial, sans-serif;
-      background-image: url("https://www.remessaonline.com.br/blog/wp-content/uploads/2024/04/javascript.jpg");
-      background-size: cover;
-      background-position: center;
-      background-attachment: fixed;
-    }
+body{
+  background-image:url("https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=1920&q=80");
+  background-size:cover;
+  background-position:50% 5%;
+  background-attachment:fixed;
+  min-height:100vh;
+}
 
-    body::before {
-      content: "";
-      position: fixed;
-      inset: 0;
-      background: rgba(0, 0, 0, 0.8);
-      z-index: -1;
-    }
+body::before{
+  content:"";
+  position:fixed;
+  inset:0;
+  background:rgba(0,0,0,0.75);
+  z-index:-1;
+}
 
-    header {
-      background: rgba(34, 34, 34, 0.9);
-      color: white;
-      padding: 25px;
-      text-align: center;
-      border-bottom: 3px solid #7f9bb9;
-    }
+.topo{
+  width:100%;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  padding:20px 50px;
+}
 
-    /* MENU */
-    .menu {
-      background: rgba(51, 51, 51, 0.95);
-      padding: 15px;
-      position: sticky;
-      top: 0;
-      z-index: 10;
-      display: flex;
-      justify-content: center;
-      gap: 15px;
-      flex-wrap: wrap;
-    }
+.logo{
+  color:#00ffcc;
+  font-size:24px;
+  font-weight:bold;
+}
 
-    .menu a {
-      background: #9bb4cf;
-      color: #111;
-      padding: 10px 18px;
-      border-radius: 25px;
-      text-decoration: none;
-      font-weight: bold;
-      transition: 0.3s;
-    }
+.menu{
+  display:flex;
+  gap:30px;
+}
 
-    .menu a:hover {
-      background: black;
-      color: white;
-      transform: translateY(-2px);
-    }
+.menu a{
+  color:white;
+  text-decoration:none;
+  font-weight:bold;
+  transition:.3s;
+}
 
-    section {
-      padding: 40px 20px;
-    }
+.menu a:hover{
+  color:#00ffcc;
+}
 
-    .card {
-      background: rgba(255, 255, 255, 0.85);
-      padding: 15px;
-      margin: 15px auto;
-      border-radius: 10px;
-      max-width: 900px;
-      box-shadow: 0 0 8px rgba(0, 0, 0, 0.12);
-      cursor: pointer;
-    }
+.container{
+  height:calc(100vh - 140px);
+  display:flex;
+  justify-content:center;
+  align-items:center;
+}
 
-    .card strong {
-      display: block;
-      text-align: center;
-      font-size: 18px;
-    }
+.card{
+  background:rgba(20,20,20,0.95);
+  border-radius:25px;
+  padding:40px 30px;
+  width:350px;
+  text-align:center;
+  box-shadow:0 0 30px rgba(0,255,200,.3);
+  animation:fadeIn 1.5s ease;
+}
 
-    .card-content {
-      display: none;
-      margin-top: 10px;
-      text-align: center;
-    }
+.card img{
+  width:220px;
+  height:220px;
+  border-radius:50%;
+  border:4px solid #00ffcc;
+  object-fit:cover;
+  object-position:50% 10%;
+}
 
-    .skills {
-      list-style: none;
-      padding: 0;
-      max-width: 600px;
-      margin: auto;
-    }
+.card h1{
+  color:white;
+  margin-top:20px;
+  font-size:26px;
+}
 
-    .skills li {
-      background: #9bb4cf;
-      margin: 10px 0;
-      padding: 10px;
-      border-radius: 6px;
-      cursor: pointer;
-      font-weight: bold;
-    }
+.card p{
+  color:#ccc;
+  margin-top:8px;
+  font-size:14px;
+}
 
-    .nivel {
-      display: none;
-      font-size: 14px;
-      margin-top: 5px;
-    }
+.social{
+  margin-top:25px;
+  display:flex;
+  justify-content:center;
+  gap:15px;
+}
 
-    .contatos {
-      display: flex;
-      gap: 25px;
-      justify-content: center;
-      margin-top: 20px;
-    }
+.social a{
+  width:42px;
+  height:42px;
+  border:1px solid white;
+  border-radius:50%;
+  color:white;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  transition:.3s;
+}
 
-    .contatos i {
-      font-size: 36px;
-      cursor: pointer;
-      transition: 0.3s;
-    }
+.social a:hover{
+  background:#00ffcc;
+  color:black;
+  transform:scale(1.1);
+}
 
-    .contatos i:hover {
-      color: #7f9bb9;
-      transform: scale(1.1);
-    }
+footer{
+  background:rgba(10,10,10,0.95);
+  border-top:2px solid #00ffcc;
+  padding:20px;
+  text-align:center;
+  color:#ccc;
+}
 
-    footer {
-      background: rgba(34, 34, 34, 0.95);
-      color: white;
-      text-align: center;
-      padding: 15px;
-    }
+footer .footer-social{
+  margin:10px 0;
+  display:flex;
+  justify-content:center;
+  gap:15px;
+}
 
-    h2 {
-      color: white;
-    }
-  </style>
+footer .footer-social a{
+  color:#00ffcc;
+  font-size:18px;
+  transition:.3s;
+}
+
+footer .footer-social a:hover{
+  color:white;
+  transform:scale(1.2);
+}
+
+@keyframes fadeIn{
+  from{opacity:0; transform:translateY(40px);}
+  to{opacity:1; transform:translateY(0);}
+}
+
+@media(max-width:600px){
+  .menu{
+    flex-wrap:wrap;
+    justify-content:center;
+    gap:15px;
+  }
+  .container{
+    padding:20px;
+  }
+  .card{
+    width:90%;
+  }
+}
+</style>
 </head>
 
 <body>
-  <header>
-    <h1>Gustavo Sales</h1>
-    <p>Desenvolvedor Front-end | JavaScript | SQL</p>
-  </header>
+
+<header class="topo">
+  <div class="logo">Gustavo</div>
 
   <nav class="menu">
-    <a href="#sobre" onclick="abrirCard('card-sobre')">Sobre</a>
-    <a href="#objetivo" onclick="abrirCard('card-objetivo')">Objetivo</a>
-    <a href="#formacao" onclick="abrirCard('card-formacao')">Formação</a>
-    <a href="#projetos" onclick="abrirCard('card-projeto')">Projetos</a>
-    <a href="#habilidades" onclick="abrirCard('card-habilidades')">Habilidades</a>
-    <a href="#contato" onclick="abrirCard('card-contato')">Contato</a>
+    <a href="https://gustavosales2001.github.io/sobre_mim/">Sobre</a>
+    <a href="https://gustavosales2001.github.io/projetos/">Projetos</a>
+    <a href="https://gustavosales2001.github.io/meus_certificados/">Certificados</a>
   </nav>
+</header>
 
-  <section id="sobre">
-    <div class="card" id="card-sobre" onclick="toggleCard(this)">
-      <strong>Resumo Profissional</strong>
-      <div class="card-content">
-        Profissional em transição para a área de Tecnologia da Informação, com foco em JavaScript.
-        Possuo base sólida em lógica de programação, estruturação de código e desenvolvimento de aplicações,
-        além de conhecimentos em SQL e banco de dados.
-      </div>
+<div class="container">
+  <div class="card">
+
+    <img src="https://i.imgur.com/aS0H0KX.png" alt="Foto Gustavo">
+
+    <h1>Gustavo Sales</h1>
+    <p>Desenvolvedor Front-end & UI/UX</p>
+
+    <div class="social">
+      <a href="#"><i class="fab fa-instagram"></i></a>
+      <a href="#"><i class="fab fa-linkedin-in"></i></a>
+      <a href="#"><i class="fab fa-github"></i></a>
     </div>
-  </section>
 
-  <section id="objetivo">
-    <div class="card" id="card-objetivo" onclick="toggleCard(this)">
-      <strong>Objetivo</strong>
-      <div class="card-content">
-        Atuar como Desenvolvedor Júnior ou em áreas correlatas à tecnologia, aplicando e aprofundando
-        meus conhecimentos em JavaScript e banco de dados.
-      </div>
-    </div>
-  </section>
+  </div>
+</div>
 
-  <section id="formacao">
-    <div class="card" id="card-formacao" onclick="toggleCard(this)">
-      <strong>Formação Acadêmica</strong>
-      <div class="card-content">
-        <p>Técnico em Mecatrônica – Universidade de Mogi das Cruzes (2019–2020)</p>
-        <p>Formação em Atirador – Exército Brasileiro (2021–2022)</p>
-      </div>
-    </div>
-  </section>
+<footer>
+  <p>© 2026 Gustavo Sales - Todos os direitos reservados</p>
 
-  <section id="projetos">
-    <h2>Projetos</h2>
+  <div class="footer-social">
+    <a href="#"><i class="fab fa-linkedin"></i></a>
+    <a href="#"><i class="fab fa-github"></i></a>
+    <a href="#"><i class="fab fa-instagram"></i></a>
+  </div>
+</footer>
 
-    <div class="card" id="card-projeto" onclick="toggleCard(this)">
-      <strong>Calculadora</strong>
-      <div class="card-content">
-        Calculadora feita com HTML, CSS e JavaScript.<br /><br />
-        <a href="https://gustavosales2001.github.io/calc_JS/" target="_blank">Ver projeto</a> |
-        <a href="https://github.com/GustavoSales2001/calc_JS" target="_blank">GitHub</a>
-      </div>
-    </div>
-  </section>
-
-  <section id="habilidades">
-    <h2>Habilidades Técnicas</h2>
-
-    <ul class="skills">
-      <li onclick="toggleNivel(this)">JavaScript <div class="nivel">Intermediário</div></li>
-      <li onclick="toggleNivel(this)">HTML <div class="nivel">Intermediário</div></li>
-      <li onclick="toggleNivel(this)">CSS <div class="nivel">Intermediário</div></li>
-      <li onclick="toggleNivel(this)">SQL <div class="nivel">Básico / Intermediário</div></li>
-      <li onclick="toggleNivel(this)">Git <div class="nivel">Conceitos iniciais</div></li>
-    </ul>
-
-    <div class="card" id="card-habilidades" onclick="toggleCard(this)">
-      <strong>Habilidades Comportamentais</strong>
-      <div class="card-content">
-        Proatividade • Raciocínio lógico • Organização • Facilidade de aprendizado • Trabalho em equipe
-      </div>
-    </div>
-  </section>
-
-  <section id="contato">
-    <div class="card" id="card-contato" onclick="toggleCard(this)">
-      <strong>Contato</strong>
-      <div class="card-content">
-        <div class="contatos">
-          <i class="fab fa-whatsapp" onclick="whatsapp()"></i>
-          <i class="fas fa-envelope" onclick="email()"></i>
-          <i class="fab fa-linkedin" onclick="linkedln()"></i>
-          <i class="fab fa-github" onclick="GitHub()"></i>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <footer>
-    <p>© 2026 - Gustavo Sales</p>
-  </footer>
-
-  <script>
-    function toggleCard(card) {
-      const content = card.querySelector(".card-content");
-      content.style.display = content.style.display === "block" ? "none" : "block";
-    }
-
-    function abrirCard(id) {
-      setTimeout(() => {
-        const card = document.getElementById(id);
-        const content = card.querySelector(".card-content");
-        content.style.display = "block";
-      }, 300);
-    }
-
-    function toggleNivel(el) {
-      const nivel = el.querySelector(".nivel");
-      nivel.style.display = nivel.style.display === "block" ? "none" : "block";
-    }
-
-    function whatsapp() {
-      window.open("https://wa.me/5511933128628", "_blank");
-    }
-
-    function email() {
-      window.location.href = "mailto:gustavosalesbarros2001@gmail.com";
-    }
-
-    function linkedln() {
-      window.location.href = "https://www.linkedin.com/in/gustavo-sales-3310a6210";
-    }
-
-    function GitHub() {
-      window.location.href = "https://github.com/GustavoSales2001";
-    }
-  </script>
 </body>
 </html>
-
