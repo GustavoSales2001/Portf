@@ -18,7 +18,7 @@
 body{
   background-image:url("https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=1920&q=80");
   background-size:cover;
-  background-position:50% 5%;
+  background-position:70% 10%;
   background-attachment:fixed;
   min-height:100vh;
 }
@@ -45,7 +45,6 @@ body::before{
   font-weight:bold;
 }
 
-/* MENU ESTILIZADO */
 .menu{
   display:flex;
   flex-direction:column;
@@ -71,7 +70,7 @@ body::before{
 }
 
 .container{
-  height:calc(100vh - 140px);
+  min-height:calc(100vh - 200px);
   display:flex;
   justify-content:center;
   align-items:center;
@@ -232,6 +231,7 @@ footer .footer-social a:hover{
 
 <script>
 const reveals = document.querySelectorAll('.reveal');
+
 window.addEventListener('scroll', () => {
   reveals.forEach(el => {
     const top = el.getBoundingClientRect().top;
@@ -240,6 +240,12 @@ window.addEventListener('scroll', () => {
     }
   });
 });
+
+setTimeout(() => {
+  reveals.forEach(el => {
+    el.classList.add('show');
+  });
+}, 2000);
 </script>
 
 </body>
