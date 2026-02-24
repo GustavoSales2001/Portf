@@ -4,33 +4,35 @@ const cors = require("cors");
 
 const app = express();
 
-// Middlewares
 app.use(cors());
 app.use(express.json());
 
-// Conexão com o MySQL
-const db = mysql.createConnection({
-  host: "localhost",
-  user: "root",
-  password: "Garagem200@",
-  database: "portfolio"
-});
+let db;
 
-// Testar conexão
-db.connect((err) => {
-  if (err) {
-    console.log("Erro ao conectar no MySQL:", err);
-    return;
-  }
-  console.log("Conectado ao MySQL com sucesso!");
-});
+if (process.env.DB_HOST) {
+  db = mysql.createConnection({
+    host: process.env.DB_HOST,
+    user: process.env.DB_USER,
+    password: process.env.DB_PASSWORD,
+    database: process.env.DB_NAME,
+    port: process.env.DB_PORT
+  });
 
-// Rota principal
+  db.connect(err => {
+    if (err) {
+      console.log("Erro ao conectar no MySQL:", err);
+    } else {
+      console.log("Conectado ao MySQL!");
+    }
+  });
+}
+
+// ROTAS FORA DO IF
+
 app.get("/", (req, res) => {
-  res.send("Servidor rodando...");
+  res.send("Servidor rodando 🚀");
 });
 
-// Rota do formulário
 app.post("/contato", (req, res) => {
   const { nome, email, mensagem } = req.body;
 
@@ -38,11 +40,14 @@ app.post("/contato", (req, res) => {
     return res.json({ mensagem: "Preencha todos os campos!" });
   }
 
+  if (!db) {
+    return res.json({ mensagem: "Banco ainda não configurado." });
+  }
+
   const sql = "INSERT INTO contatos (nome, email, mensagem) VALUES (?, ?, ?)";
 
-  db.query(sql, [nome, email, mensagem], (err, result) => {
+  db.query(sql, [nome, email, mensagem], (err) => {
     if (err) {
-      console.log("Erro ao inserir no banco:", err);
       return res.status(500).json({ mensagem: "Erro ao salvar no banco" });
     }
 
@@ -50,7 +55,10 @@ app.post("/contato", (req, res) => {
   });
 });
 
-// Porta do servidor
-app.listen(3000, () => {
-  console.log("Servidor rodando em http://localhost:3000");
+//  SERVIDOR FORA DO IF
+
+const PORT = process.env.PORT || 3000;
+
+app.listen(PORT, () => {
+  console.log(`Servidor rodando na porta ${PORT}`);
 });
